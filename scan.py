@@ -1,9 +1,10 @@
 #!/usr/bin/python
 # Filename : scan.py
 
+#-----------------------------------
 ## simple 3d scanner
 ## 2016/04
-## 0.2
+## 0.2 create xyz point cloud - directly posible import to MeshLab
 ##----------------------------------
 import os, math, pygame, time
 from datetime import datetime
@@ -231,44 +232,4 @@ for u in range (0,360):
 
 pygame.display.flip()
 
-
-vel = 1
-deli = 1 #delitel velikosti
-
-#rez
-for rr in range (5):
- r =rr*50
- if r%2==0:
-   cX=cGre
- else:
-   cX=cRed
- 
- for u in range (0,loop-2):
-    
-    x=sMat[r][u]*vel #/deli
-    uhel=float(2*(pi)/(loop-1)*u)
-    #print uhel
-    rx=int(float(sx+math.sin(uhel)*x))
-    ry=int(float(sy+math.cos(uhel)*x))
-    screen.set_at((rx,ry),cX)
- sy=sy-posun 
- sx=sx+posun/2 
-pygame.display.flip()
-pygame.image.save(screen,scannami)
-
-
-GPIO.output(EN2, True)
-
-time.sleep(20)
-
-
-
-
-
-
-
-
-
-
-   
-   
+GPIO.output(EN2, True) #mot switch off 
