@@ -1,15 +1,14 @@
 # simple3dscanner
 one red line laser, step motor, raspberry pi, python and pygame, point cloud to MeshLab
 
-
 hardware:
-
 https://www.instagram.com/p/BEYQFLeR7QY/?taken-by=octopusengine
 
+schematic:
+http://www.octopusengine.eu/2016gal/scanner-schematic.gif
 
 
 simple idea - how to create points cloud:
-
 
 loop {
 
@@ -22,7 +21,7 @@ loop {
   }
   
   
-  example of processing
   
+  example of processing
   https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
   
