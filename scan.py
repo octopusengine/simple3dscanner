@@ -121,6 +121,7 @@ def oneScan(angle): #=angle
  rr=0
  x=startx
  y=sTop 
+ # x,y points of screen
  pygame.draw.line(screen,cBlu,(10,sTop),(width-10,sTop),2)
  pygame.draw.line(screen,cBlu,(10,height-sBott),(width-10,height-sBott),2)
  pygame.draw.line(screen,cBlu,(width/2,sTop),(width/2,height-sBott),2)
