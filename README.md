@@ -3,8 +3,12 @@ one red line laser, step motor, raspberry pi, python and pygame, point cloud to 
 
 simple idea - how to create points cloud:
 
+
 loop
+
   take a picture
+
   recognize red line
+
   transform to xyz
   
