@@ -1,7 +1,7 @@
 # simple3dscanner
 <b>What do you need for program testing?</b><br /> 
 Raspberry pi 2, Raspberrypi camera, - it works in Python with Pygame module<br /> 
-<i>setup ramdisk:</i><br />
+<i>setup ramdisk (temporary files):</i><br />
 <code>sudo mkdir /home/pi/ramdisk</code><br /> 
 <code>sudo nano /etc/fstab</code><br />
 and add the line<br />
