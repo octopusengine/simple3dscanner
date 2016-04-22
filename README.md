@@ -1,11 +1,12 @@
 # simple3dscanner
 <b>What do you need for program testing?</b><br /> 
-Raspberry pi 2, Raspberrypi camera, - it works in Python with Pygame module
+Raspberry pi 2, Raspberrypi camera, - it works in Python with Pygame module<br /> 
 <i>setup /ramdisk</i>
 
 <b>What more do you need for scanner testing?</b><br /> 
 red line laser, voltage source 12V + step motor with driver<br /> 
-I am using NEMO and A4988 ...point cloud to MeshLab
+I am using NEMO and A4988<br />  
+...point cloud to MeshLab
 
 picture of hardware:<br /> 
 https://www.instagram.com/p/BEYQFLeR7QY/?taken-by=octopusengine
@@ -13,7 +14,7 @@ https://www.instagram.com/p/BEYQFLeR7QY/?taken-by=octopusengine
 schematic:<br /> 
 http://www.octopusengine.eu/2016gal/scanner-schematic.gif
 
-
+<hr /> 
 simple idea - how to create points cloud:
 
 loop {
