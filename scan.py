@@ -38,7 +38,7 @@ rad =height-sTop-sBott+1 #rows
 #------------------------------/main-setup
 sMat = [[ 0 for i in range(loop+1)] for j in range(rad+1) ]
 
-ramdiskPath = "/home/pi/ramdisk/"
+ramdiskPath = "/home/pi/ramdisk/" #temporary data storage
 #print "0,0", sMat[0][0]
 #print math.sin(0)
 pi=math.pi
@@ -102,7 +102,7 @@ def motCCWs(steps,slow): #down - modif old slow = step.Tilt / new mot2
      GPIO.output(STEP2, False)
    GPIO.output(EN2, True)  #aretace
 
-def oneScan(angleAll): #=angle
+def oneScan(angleStep): #=angle
  global sMat, bb
  global fw
  filename = "temp"+datName+".jpg"
@@ -165,7 +165,7 @@ def oneScan(angleAll): #=angle
          screen.set_at((width-x,y),cGre) 
          screen.set_at((width-x-1,y),cGre) 
          xx=width-x-axisX
-         sMat[y-sTop][angle]=xx
+         sMat[y-sTop][angleStep]=xx
          bb = bb+1
          
          if xx!=0 and xx>-200:         
@@ -182,7 +182,7 @@ def oneScan(angleAll): #=angle
          x=startx
    #else:  
    x=x+1
-   if x>width-konecX:
+   if x>width-endX:
          x=startx
          y=y+kroky
          screen.set_at((width-x,y),cBlu) 
