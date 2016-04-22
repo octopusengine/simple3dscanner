@@ -3,8 +3,8 @@ What do you need for program testing?
 Raspberry pi 2, Raspberrypi camera, - it works in Python with Pygame module
 
 What more do you need for scanner testing?
-one red line laser, step motor with driver - I am using NEMO and A
-point cloud to MeshLab
+red line laser, voltage source 12V + step motor with driver - I am using NEMO and A4988
+...point cloud to MeshLab
 
 picture of hardware:
 https://www.instagram.com/p/BEYQFLeR7QY/?taken-by=octopusengine
@@ -32,4 +32,11 @@ loop {
   
   example of processing
   https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
+  
+  TODO:
+  better user input / GUI
+  light detection / daylight.. color of object..
+  faster computing / C library or Cython testing
+  digital filter - RAW data filtering
+  converting to STL
   
