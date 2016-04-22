@@ -2,7 +2,9 @@
 <b>What do you need for program testing?</b><br /> 
 Raspberry pi 2, Raspberrypi camera, - it works in Python with Pygame module<br /> 
 <i>setup /ramdisk</i><br />
-simple starting on your Raspberry pi: <code>sudo python scan.py</code><br />
+<br />
+simple starting on your Raspberry pi:<br />
+<code>sudo python scan.py</code><br />
 
 <b>What more do you need for scanner testing?</b><br /> 
 red line laser, voltage source 12V + step motor with driver<br /> 
