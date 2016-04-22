@@ -25,20 +25,18 @@ loop {
   
   }
 
-  
-2016/04/18 - 0.1 first experiment, it works! I was really surprised ;-)
-
-2016/04/21 - 0.2 my first "open source" pos on GitHub - simple starting on your Raspberry pi: sudo python scan.py
-  
-  
-  
-  example of processing
+ example of processing
   https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
-  
-  TODO:
-  better user input / GUI
-  light detection / daylight.. color of object..
-  faster computing / C library or Cython testing
-  digital filter - RAW data filtering
-  converting to STL
+
+
+HISTORY: 
+ 2016/04/18 - 0.1 first experiment, it works! I was really surprised ;-)
+ 2016/04/21 - 0.2 my first "open source" pos on GitHub - simple starting on your Raspberry pi: sudo python scan.py
+
+TODO:
+ better user input / GUI
+ light detection / daylight.. color of object..
+ faster computing / C library or Cython testing
+ digital filter - RAW data filtering
+ converting to STL
   
