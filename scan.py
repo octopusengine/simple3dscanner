@@ -49,7 +49,6 @@ cGre=(0,255,0)
 cBlu=(0,0,255)
 cWhi=(255,255,255)
 
-krok=2
 kroky=1
 bb=0 #num points 
 
