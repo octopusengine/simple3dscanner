@@ -35,7 +35,7 @@ HISTORY:
 
  2016/04/21 - 0.2 my first "open source" pos on GitHub - simple starting on your Raspberry pi: sudo python scan.py
 
-TODO:
+<h2>TODO:</h2>
 
  better user input / GUI
  
