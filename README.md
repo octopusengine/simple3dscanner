@@ -1,7 +1,12 @@
 # simple3dscanner
-one red line laser, step motor, raspberry pi, python and pygame, point cloud to MeshLab
+What do you need for program testing? 
+Raspberry pi 2, Raspberrypi camera, - it works in Python with Pygame module
 
-hardware:
+What more do you need for scanner testing?
+one red line laser, step motor with driver - I am using NEMO and A
+point cloud to MeshLab
+
+picture of hardware:
 https://www.instagram.com/p/BEYQFLeR7QY/?taken-by=octopusengine
 
 schematic:
