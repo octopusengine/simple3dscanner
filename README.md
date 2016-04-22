@@ -15,7 +15,7 @@ simple starting on your Raspberry pi:<br />
 
 <b>What more do you need for scanner testing?</b><br /> 
 red line laser, voltage source 12V + step motor with driver<br /> 
-I am using NEMO and A4988<br />  
+I am using Nema and A4988<br />  
 ...point cloud to MeshLab
 
 picture of hardware:<br /> 
