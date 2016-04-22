@@ -5,7 +5,7 @@ Raspberry pi 2, Raspberrypi camera, - it works in Python with Pygame module<br /
 <code>sudo mkdir /home/pi/ramdisk</code><br /> 
 <code>sudo nano /etc/fstab</code><br />
 and add the line<br />
-tmpfs /home/pi/ramdisk tmpfs nodev,nosuid,size=100M 0 0<br /> 
+<code>tmpfs /home/pi/ramdisk tmpfs nodev,nosuid,size=100M 0 0</code><br /> 
 <br />
 
 
