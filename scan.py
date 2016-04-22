@@ -169,7 +169,7 @@ def oneScan(angleStep): #=angle
          bb = bb+1
          
          if xx!=0 and xx>-200:         
-          angle=float(2*pi/(loop-1)*angleAll)
+          angle=float(2*pi/(loop-1)*angleStep)
           rx=float(math.sin(angle)*xx*nasDef)
           ry=float(math.cos(angle)*xx*nasDef)
           rz = y
