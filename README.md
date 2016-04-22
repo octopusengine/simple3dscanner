@@ -1,5 +1,5 @@
 # simple3dscanner
-What do you need for program testing? 
+<b>What do you need for program testing?</b><br /> 
 Raspberry pi 2, Raspberrypi camera, - it works in Python with Pygame module
 
 What more do you need for scanner testing?
@@ -29,13 +29,13 @@ loop {
   https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
 
 
-HISTORY: 
+<h3>HISTORY:</h3> 
 
  2016/04/18 - 0.1 first experiment, it works! I was really surprised ;-)
 
  2016/04/21 - 0.2 my first "open source" pos on GitHub - simple starting on your Raspberry pi: sudo python scan.py
 
-<h2>TODO:</h2>
+<h3>TODO:</h3>
 
  better user input / GUI
  
