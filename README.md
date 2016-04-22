@@ -41,13 +41,13 @@ loop {
   https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
 
 <hr />
-<h3>HISTORY:</h3> 
+<h3>History:</h3> 
 
  2016/04/18 - 0.1 first experiment, it works! I was really surprised ;-)<br /> 
  2016/04/21 - 0.2 my first "open source" post for GitHub 
  
  
-<h3>TODO:</h3>
+<h3>ToDo:</h3>
 
  better user input / GUI<br /> 
  light detection / daylight.. color of object..<br /> 
