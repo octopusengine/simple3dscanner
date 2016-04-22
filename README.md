@@ -52,7 +52,8 @@ loop {
  better user input / GUI<br /> 
  light detection / daylight.. color of object..<br /> 
  faster computing / C library or Cython testing<br /> 
- digital filter - RAW data filtering<br /> 
+ second line laser (FET transistor switching?) <br /> 
+ digital filter - RAW data 2D filtering<br /> 
  converting to STL<br /> 
  
   
