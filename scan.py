@@ -31,7 +31,7 @@ sBott=550
 
 axisX=width/2-120 #800 ##1200 
 endX=axisX-sWidth+50 #50 nejde vubec za osu  
-startx=width-osaX-sWidth-20 
+startx=width-axisX-sWidth-20 
 nasDef = 1.9 
 
 rad =height-sTop-sBott+1 #rows
@@ -103,7 +103,7 @@ def motCCWs(steps,slow): #down - modif old slow = step.Tilt / new mot2
      GPIO.output(STEP2, False)
    GPIO.output(EN2, True)  #aretace
 
-def oneScan(angle): #=angle
+def oneScan(angleAll): #=angle
  global sMat, bb
  global fw
  filename = "temp"+datName+".jpg"
@@ -127,7 +127,7 @@ def oneScan(angle): #=angle
  pygame.draw.line(screen,cBlu,(width/2,sTop),(width/2,height-sBott),2)
  pygame.draw.line(screen,cBlu,(width-startx,sTop),(width-startx,height-sBott),2)
  pygame.draw.line(screen,cBlu,(endX,sTop),(endX,height-sBott),2)
- pygame.draw.line(screen,cWhi,(osaX,sTop),(osaX,height-10),2)
+ pygame.draw.line(screen,cWhi,(axisX,sTop),(axisX,height-10),2)
  screen.set_at((10,10),cRed) 
  screen.set_at((11,11),cRed)
  pygame.display.flip()
@@ -165,17 +165,17 @@ def oneScan(angle): #=angle
          #print rr,x,y,cR,cG,cB
          screen.set_at((width-x,y),cGre) 
          screen.set_at((width-x-1,y),cGre) 
-         xx=width-x-osaX
+         xx=width-x-axisX
          sMat[y-sTop][angle]=xx
          bb = bb+1
          
          if xx!=0 and xx>-200:         
-          uhel=float(2*pi/(loop-1)*angle)
-          rx=float(math.sin(uhel)*xx*nasDef)
-          ry=float(math.cos(uhel)*xx*nasDef)
+          angle=float(2*pi/(loop-1)*angleAll)
+          rx=float(math.sin(angle)*xx*nasDef)
+          ry=float(math.cos(angle)*xx*nasDef)
           rz = y
           co = str(rx)+" "+str(ry)+" "+str(rz)
-          cop = str(uhel)+" > "+str(xx)+" > "+co
+          cop = str(angle)+" > "+str(xx)+" > "+co
           #print cop
           fp.write(co+"\n")
      
