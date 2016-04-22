@@ -29,8 +29,8 @@ sWidth =100 	# width scann
 sTop=430 #	10 liska 11cm #150 vetsi / 300 ping 3.6cm ###12cm max 3 cm min --0-500 
 sBott=550
 
-osaX=width/2-120 #800 ##1200 
-konecX=osaX-sWidth+50 #50 nejde vubec za osu  
+axisX=width/2-120 #800 ##1200 
+endX=axisX-sWidth+50 #50 nejde vubec za osu  
 startx=width-osaX-sWidth-20 
 nasDef = 1.9 
 
@@ -126,7 +126,7 @@ def oneScan(angle): #=angle
  pygame.draw.line(screen,cBlu,(10,height-sBott),(width-10,height-sBott),2)
  pygame.draw.line(screen,cBlu,(width/2,sTop),(width/2,height-sBott),2)
  pygame.draw.line(screen,cBlu,(width-startx,sTop),(width-startx,height-sBott),2)
- pygame.draw.line(screen,cBlu,(konecX,sTop),(konecX,height-sBott),2)
+ pygame.draw.line(screen,cBlu,(endX,sTop),(endX,height-sBott),2)
  pygame.draw.line(screen,cWhi,(osaX,sTop),(osaX,height-10),2)
  screen.set_at((10,10),cRed) 
  screen.set_at((11,11),cRed)
@@ -221,16 +221,17 @@ for u in range (loop-1):
   fw.write("\n")
 fw.close()
 
-sx =1200
+sx =1200 #center 
 sy =800
 screen.set_at((sx,sy),cGre)
 for u in range (0,360):
     x=200
-    uhel=float(u*2*pi)
-    rx=int(float(sx+math.sin(uhel)*x))
-    ry=int(float(sy+math.cos(uhel)*x))
+    angle=float(u*2*pi)
+    rx=int(float(sx+math.sin(angle)*x))
+    ry=int(float(sy+math.cos(angle)*x))
     screen.set_at((rx,ry),cRed) 
 
 pygame.display.flip()
 
-GPIO.output(EN2, True) #mot switch off 
+GPIO.output(EN2, True) #motor switch off 
+#---end---
