@@ -6,7 +6,7 @@ setup(
     name='scan',
     version='0.03',
     description='Simple 3D scanner',
-    long_description=''.join(open('README.rst').readlines()),
+    long_description=''.join(open('README.md').readlines()),
     keywords='3dscanner',
     author='Jan Copak',
     author_email='jan.copak@soukroma.cz',
