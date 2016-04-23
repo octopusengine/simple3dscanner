@@ -43,8 +43,10 @@ loop {
 <hr />
 <h3>History:</h3> 
 
- 2016/04/18 - 0.1 first experiment, it works! I was really surprised ;-)<br /> 
- 2016/04/21 - 0.2 my first "open source" post for GitHub 
+ 2016/04 
+ 0.10 first experiment, it works! I was really surprised ;-)<br /> 
+ 0.20 my first "open source" post for GitHub 
+ 0.30 oeHelp, oeGPIO
  
  
 <h3>ToDo:</h3>
