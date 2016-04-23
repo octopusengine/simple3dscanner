@@ -11,7 +11,7 @@ and add the line<br />
 
 <br />
 simple starting on your Raspberry pi:<br />
-<code>sudo python scan.py</code><br />
+<code>sudo python scan.py [projectName] [numberOfScann] </code><br />
 
 <b>What more do you need for scanner testing?</b><br /> 
 red line laser, voltage source 12V + step motor with driver<br /> 
