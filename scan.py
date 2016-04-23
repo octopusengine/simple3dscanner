@@ -2,28 +2,55 @@
 # Filename : scan.py
 
 #-----------------------------------
-## simple 3d scanner 
+## simple 3d scanner - octopusengine.eu
 ## 2016/04 - I am beginner, but it works ;-)
-## 0.2 create xyz point cloud - directly posible import to MeshLab
+## 0.21 create xyz point cloud - directly posible import to MeshLab
+## 0.30 oeGPIO, oeHelp
 ##----------------------------------
-import os, math, pygame, time
+import os, sys, math, pygame, time
 from datetime import datetime
 from time import sleep
-import RPi.GPIO as GPIO # for step motor
+#import RPi.GPIO as GPIO # for step motor
 import picamera
+
+from oeGPIO import * #oeSetupGPIO
+from oeHelp import *
 
 width = 1600 #1024 #800
 height = 1200 #768 #600
 screen_width=width
 screen_height=height
+
 #-----------------------------main---setup
+#print 'Number of arguments:', len(sys.argv), 'arguments.'
+#print 'Argument List:', str(sys.argv)
+try:  
+  name=str(sys.argv[1])
+  #name="robot" 	#scanning object name
+except: 
+   help()
+   name="noname"
+   print ("Default project name: "+ name )
+
+if name=="help":
+    help()
+    sys.exit()
+    #err.stop
+else:
+     print ("First argument > project name: "+ name )
+
+try:
+  print ("Second argument - number scan: %s" % str(sys.argv[2]))
+  loop = int(sys.argv[2])+1
+except: 
+  loop=6 	#testing 10/20/40/100/200/400...
+  print ("Default loop: "+ str(loop) ) 
+
+#---------------------------------
 dayLight=1
 lightObject=0
 brownObject=0
 blueObject=1
-
-loop=600 	#testing 10/20/40/100/200/400...
-name="robot" 	#scanning object name
 
 sWidth =100 	# width scann
 sTop=430 #	10 liska 11cm #150 vetsi / 300 ping 3.6cm ###12cm max 3 cm min --0-500 
@@ -77,30 +104,29 @@ sleep(3)
 cam.stop_preview()
 
 #---------------------------------
-EN2 = 22
-DIR2 = 27
-STEP2 = 17
-
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
-
-#GPIO.setup(END2, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-GPIO.setup(EN2, GPIO.OUT)
-GPIO.setup(DIR2, GPIO.OUT)
-GPIO.setup(STEP2, GPIO.OUT)
+#oeGPIO.setupGPIO()
+oeSetupGPIO()
 #---------------------------------
+##hard experiments
+if dayLight:
+       fR=60 #64 #50
+       fG=64
+       fB=64
+else: 
+       fR=80
+       fG=50
+       fB=50 
 
-dStep=0.00001
-def motCCWs(steps,slow): #down - modif old slow = step.Tilt / new mot2
-   nas=2 #1600/ot #8=400 #16=200 for 360
-   GPIO.output(EN2, False)
-   GPIO.output(DIR2, False)
-   for tx in range(steps*nas): 
-     time.sleep(dStep*slow)  
-     GPIO.output(STEP2, True)
-     time.sleep(dStep*slow) 
-     GPIO.output(STEP2, False)
-   GPIO.output(EN2, True)  #aretace
+if brownObject:
+       fR=70 #64
+       fG=50
+       fB=64 
+
+if blueObject:
+       fR=16 #64
+       fG=160
+       fB=160
+#---------------------------------
 
 def oneScan(angleStep): #=angle
  global sMat, bb
@@ -116,10 +142,7 @@ def oneScan(angleStep): #=angle
  obrRect = obr.get_rect()
  screen.blit(obr, obrRect)    
  pygame.display.flip()
-
- rr=0
- x=startx
- y=sTop 
+ 
  # x,y points of screen
  pygame.draw.line(screen,cBlu,(10,sTop),(width-10,sTop),2)
  pygame.draw.line(screen,cBlu,(10,height-sBott),(width-10,height-sBott),2)
@@ -129,28 +152,11 @@ def oneScan(angleStep): #=angle
  pygame.draw.line(screen,cWhi,(axisX,sTop),(axisX,height-10),2)
  screen.set_at((10,10),cRed) 
  screen.set_at((11,11),cRed)
- pygame.display.flip()
+ pygame.display.flip() 
 
- ##hard experiments
-
- if dayLight:
-       fR=60 #64 #50
-       fG=64
-       fB=64
- else: 
-       fR=80
-       fG=50
-       fB=50 
-
- if brownObject:
-       fR=70 #64
-       fG=50
-       fB=64 
-
- if blueObject:
-       fR=16 #64
-       fG=160
-       fB=160
+ rr=0
+ x=startx #camera picture X
+ y=sTop   #camera picture Y
 
  while y<height-sBott:
    #print screen.get_at((x*10,y*10)) #1 arg
@@ -164,7 +170,7 @@ def oneScan(angleStep): #=angle
          #print rr,x,y,cR,cG,cB
          screen.set_at((width-x,y),cGre) 
          screen.set_at((width-x-1,y),cGre) 
-         xx=width-x-axisX
+         xx=width-x-axisX   # = distance from axis > main scann data
          sMat[y-sTop][angleStep]=xx
          bb = bb+1
          
@@ -192,22 +198,23 @@ def oneScan(angleStep): #=angle
  pygame.display.flip()
  time.sleep(2)
 
-#=============================================================================
+#======================================== main scan loop =====================================
 scanname = ramdiskPath+datName+'.csv'
 fp = open(xyzFile,"a")
 for st in range (loop-1):
    oneScan(st)
    print "--------------"
-   co=str(st+1)+"/"+str(loop-1)+" ("+str(bb)+")"
+   co=name+" "+str(st+1)+"/"+str(loop-1)+" ("+str(bb)+")"
    print co
    cam.annotate_text = co
-   motCCWs(1600/(loop-1),500) #1600 na 360 #100:22.5st,16ot #
+   oeMotCCWs(1600/(loop-1),100)    #1600 na 360 #100:22.5st,16ot #
 fp.close()
-#----------------------------------------
+#======================================== /main scan loop =====================================
+
 #control display data
 posun=6
 
-scanname = ramdiskPath+datName +'.txt'
+scanname = ramdiskPath+datName +'.txt' #RAW scann data
 scannami = ramdiskPath+datName +'.jpg'
 fw = open(scanname,"a")
 screen=pygame.display.set_mode([screen_width,screen_height])
@@ -232,5 +239,6 @@ for u in range (0,360):
 
 pygame.display.flip()
 
-GPIO.output(EN2, True) #motor switch off 
+oeMotOff()
+time.sleep(10)
 #---end---
