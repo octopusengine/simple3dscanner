@@ -31,6 +31,7 @@ except:
    help()
    name="noname"
    print ("Default project name: "+ name )
+datName=name+datetime.now().strftime("%Y_%m_%d_%H_%M")    
 
 if name=="help":
     help()
@@ -62,10 +63,12 @@ startx=width-axisX-sWidth-20
 nasDef = 1.9 
 
 rad =height-sTop-sBott+1 #rows
-#------------------------------/main-setup
-sMat = [[ 0 for i in range(loop+1)] for j in range(rad+1) ]
 
+sMat = [[ 0 for i in range(loop+1)] for j in range(rad+1) ]
 ramdiskPath = "/home/pi/ramdisk/" #temporary data storage
+
+xyzFile = ramdiskPath+datName+'.xyz'
+#------------------------------/main-setup
 #print "0,0", sMat[0][0]
 #print math.sin(0)
 pi=math.pi
@@ -81,10 +84,6 @@ bb=0 #num points
 
 #------------------------------------
 pygame.init()
-
-datName=name+datetime.now().strftime("%Y_%m_%d_%H_%M") 
-xyzFile = ramdiskPath+datName+'.xyz'
-
 #cam = pygame.camera.Camera("/dev/video0",(width,height),"RGB")
 cam= picamera.PiCamera()
 if dayLight:
@@ -129,13 +128,11 @@ if blueObject:
 #---------------------------------
 
 def oneScan(angleStep): #=angle
- global sMat, bb
- global fw
+ global sMat, bb, fw
  filename = "temp"+datName+".jpg"
  print filename
  filepath = ramdiskPath+filename
  cam.capture(filepath)
-
  screen=pygame.display.set_mode([screen_width,screen_height])
 
  obr = pygame.image.load(filepath)
@@ -158,7 +155,8 @@ def oneScan(angleStep): #=angle
  x=startx #camera picture X
  y=sTop   #camera picture Y
 
- while y<height-sBott:
+ #main loop - search between sBott and sTop - for every angle
+ while y<height-sBott: 
    #print screen.get_at((x*10,y*10)) #1 arg
    cR = screen.get_at((width-x,y))[0]
    cG = screen.get_at((width-x,y))[1]
