@@ -45,7 +45,7 @@ try:
   loop = int(sys.argv[2])+1
 except: 
   loop=6 	#testing 10/20/40/100/200/400...
-  print ("Default loop: "+ str(loop) ) 
+  print ("Default rotation steps: "+ str(loop) ) 
 
 #---------------------------------
 dayLight=1
