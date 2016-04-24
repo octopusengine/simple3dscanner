@@ -155,7 +155,7 @@ def oneScan(angleStep): #=angle
  x=startx #camera picture X
  y=sTop   #camera picture Y
 
- #main loop - search between sBott and sTop - for every angle
+ #main loop - search between (sBott and sTop) x (startx and endX) - for every angle
  while y<height-sBott: 
    #print screen.get_at((x*10,y*10)) #1 arg
    cR = screen.get_at((width-x,y))[0]
@@ -163,7 +163,7 @@ def oneScan(angleStep): #=angle
    cB = screen.get_at((width-x,y))[2]
      
    if cR>fR and cG<fG and  cB<fB: #64/64/64 ##
-         #citlivost na RED: pro R 64 na svetle malo
+         #sensitivity to red color
          rr=rr+1
          #print rr,x,y,cR,cG,cB
          screen.set_at((width-x,y),cGre) 
