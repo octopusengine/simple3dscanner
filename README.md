@@ -3,6 +3,7 @@
 It is only the first step - my first project here.<br /> 
 I would be very happy to see people "testing" or forking this and creating bigger and better versions ;-)<br /> 
 I'm also grateful for all the advice, error correction or recommendations how to better proceed...<br />
+Also look at pictures in a directory <b>images</b> - gave me a job to try to explain how easy principle I use.<br /> 
 
 <b>What do you need for program testing?</b><br /> 
 Raspberry pi 2, Raspberrypi camera, - it works in Python 2.7 with Pygame module<br /> 
