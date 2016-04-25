@@ -168,8 +168,8 @@ def oneScan(angleStep): #=angle
          #print rr,x,y,cR,cG,cB
          screen.set_at((width-x,y),cGre) 
          screen.set_at((width-x-1,y),cGre) 
-         xx=width-x-axisX   # = distance from axis > main scann data
-         sMat[y-sTop][angleStep]=xx
+         xx=width-x-axisX             # = distance from axis > main scann data
+         sMat[y-sTop][angleStep]=xx   # matrix RAW data y,a,d (y-sTop,angleStep,xx)
          bb = bb+1
          
          if xx!=0 and xx>-200:         
