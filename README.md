@@ -25,6 +25,7 @@ https://www.instagram.com/p/BEYQFLeR7QY/?taken-by=octopusengine
 schematic:<br /> 
 http://www.octopusengine.eu/2016gal/scanner-schematic.gif
 
+
 <hr /> 
 simple idea - how to create points cloud:
 
@@ -58,5 +59,9 @@ loop {
  second line laser (FET transistor switching?) <br /> 
  digital filter - RAW data 2D filtering<br /> 
  converting to STL<br /> 
+ 
+<h3>Licence:</h3>
+MIT<br /> 
+<i>Copyright (c) 2016 Octopusengine.eu</i><br /> 
  
   
