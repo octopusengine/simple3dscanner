@@ -29,7 +29,7 @@ def oeSetupGPIO():
 
 def oeMotCCWs(steps,speed):
    global EN2,DIR2,STEP2, dStep
-   #step motor - coun clock wise   
+   #step motor - count clock wise   
    nas=2 #1600/ot #8=400 #16=200 for 360
    GPIO.output(EN2, False)
    GPIO.output(DIR2, False)
