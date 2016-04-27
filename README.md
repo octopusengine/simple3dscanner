@@ -1,6 +1,6 @@
 # simple3dscanner
 
-<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/fig5-ball-schematic.jpg" alt="fig5-ball-schematic.jpg" width="550">
+<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/fig5-ball-schematic.jpg" alt="fig5-ball-schematic.jpg" width="600">
 
 It is only the first step - my first project here.<br /> 
 I would be very happy to see people "testing" or forking this and creating bigger and better versions ;-)<br /> 
@@ -27,7 +27,7 @@ red line laser, voltage source 12V + step motor with driver<br />
 I am using Nema and A4988<br />  
 
 picture of hardware - first alpha edition (with one laser):<br /> 
-<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/scanner-hardware1.jpg" alt="scanner-hardware1.jpg" width="550">
+<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/scanner-hardware1.jpg" alt="scanner-hardware1.jpg" width="600">
 
 schematic:<br /> 
 http://www.octopusengine.eu/2016gal/scanner-schematic.gif
