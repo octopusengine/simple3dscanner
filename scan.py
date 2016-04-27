@@ -5,7 +5,7 @@
 ## simple 3d scanner - octopusengine.eu
 ## 2016/04 - I am beginner, but it works ;-)
 ## 0.21 create xyz point cloud - directly posible import to MeshLab
-## 0.30 oeGPIO, oeHelp
+## 0.33 oeGPIO, oeHelp
 ##----------------------------------
 import os, sys, math, pygame, time
 from datetime import datetime
@@ -51,16 +51,19 @@ except:
 dayLight=1
 lightObject=0
 brownObject=0
-blueObject=1
+blueObject=0
+
+filter1=1
+
 
 sWidth =100 	# width scann
-sTop=430 #	10 liska 11cm #150 vetsi / 300 ping 3.6cm ###12cm max 3 cm min --0-500 
+sTop=430 ##430 #	10 liska 11cm #150 vetsi / 300 ping 3.6cm ###12cm max 3 cm min --0-500 
 sBott=550
 
 axisX=width/2-120 #800 ##1200 
 endX=axisX-sWidth+50 #50 nejde vubec za osu  
 startx=width-axisX-sWidth-20 
-nasDef = 1.9 
+nasDef = 1.6  #
 
 rad =height-sTop-sBott+1 #rows
 
@@ -77,6 +80,7 @@ pi=math.pi
 cRed=(255,0,0)
 cGre=(0,255,0)
 cBlu=(0,0,255)
+cYel=(255,255,0)
 cWhi=(255,255,255)
 
 kroky=1
@@ -163,24 +167,21 @@ def oneScan(angleStep): #=angle
    cB = screen.get_at((width-x,y))[2]
      
    if cR>fR and cG<fG and  cB<fB: #64/64/64 ##
+         cR1 = screen.get_at((width-x-1,y))[0]
+         cR2 = screen.get_at((width-x-2,y))[0]
+         #cR3 = screen.get_at((width-x-5,y))[0]
+         if cR1>cR: 
+            x=x-1
+            if cR2>cR1:
+               x=x-1
          #sensitivity to red color
          rr=rr+1
          #print rr,x,y,cR,cG,cB
-         screen.set_at((width-x,y),cGre) 
-         screen.set_at((width-x-1,y),cGre) 
+         #screen.set_at((width-x,y),cGre) 
+         #screen.set_at((width-x-1,y),cGre) 
          xx=width-x-axisX             # = distance from axis > main scann data
          sMat[y-sTop][angleStep]=xx   # matrix RAW data y,a,d (y-sTop,angleStep,xx)
-         bb = bb+1
-         
-         if xx!=0 and xx>-200:         
-          angle=float(2*pi/(loop-1)*angleStep)
-          rx=float(math.sin(angle)*xx*nasDef)
-          ry=float(math.cos(angle)*xx*nasDef)
-          rz = y
-          co = str(rx)+" "+str(ry)+" "+str(rz)
-          cop = str(angle)+" > "+str(xx)+" > "+co
-          #print cop
-          fp.write(co+"\n")
+         bb = bb+1     
      
          y=y+kroky
          x=startx
@@ -193,8 +194,40 @@ def oneScan(angleStep): #=angle
      
 
  #screen.blit(obr, obrRect)    
- pygame.display.flip()
- time.sleep(2)
+ 
+ #---filter---
+ if filter1: #doplneni pri 0 predchoyi prvek
+    #y=sTop+1   
+    y=sTop+2   
+    while y<height-sBott:       
+        d = sMat[y-sTop][angleStep]
+        #if d == 0:
+        if (sMat[y-sTop-1][angleStep]+sMat[y-sTop+1][angleStep])>0: 
+          #d = (sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep])/3   
+          d = (sMat[y-sTop-2][angleStep]+sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep]+sMat[y-sTop+2][angleStep])/5   
+          sMat[y-sTop][angleStep]=d 
+          x=width-axisX-d
+          screen.set_at((width-x,y),cGre)
+        y=y+kroky 
+  
+ pygame.display.flip() 
+
+ #---export xyz--- 
+ y=sTop+1   
+ while y<height-sBott:       
+    xx = sMat[y-sTop][angleStep]
+    if xx!=0 and xx>-200:         
+      angle=float(2*pi/(loop-1)*angleStep)
+      rx=float(math.sin(angle)*xx*nasDef)
+      ry=float(math.cos(angle)*xx*nasDef)
+      rz = y
+      co = str(rx)+" "+str(ry)+" "+str(rz)
+      #cop = str(angle)+" > "+str(xx)+" > "+co
+      #print cop
+      fp.write(co+"\n") 
+    y=y+kroky
+
+ #time.sleep(0.2)    
 
 #======================================== main scan loop =====================================
 scanname = ramdiskPath+datName+'.csv'
