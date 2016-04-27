@@ -28,7 +28,7 @@ I am using Nema and A4988<br />
 ...point cloud to MeshLab
 
 picture of hardware:<br /> 
-https://www.instagram.com/p/BEYQFLeR7QY/?taken-by=octopusengine
+<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/scanner-hardware1.jpg" alt="scanner-hardware1.jpg" width="550">
 
 schematic:<br /> 
 http://www.octopusengine.eu/2016gal/scanner-schematic.gif
