@@ -61,7 +61,7 @@ File / Import mesh...<br />
  0.10 first experiment, it works! I was really surprised ;-)<br /> 
  0.20 my first "open source" post for GitHub<br /> 
  0.30 oeHelp, oeGPIO<br />
- 
+ 0.33 filter1 - digital filter <i>Xn=aver(Xn-1,Xn,Xn+1)</i><br />
  
 <h3>ToDo:</h3>
 
