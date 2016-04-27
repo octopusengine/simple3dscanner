@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # Filename : scan.py
-
 #-----------------------------------
 ## simple 3d scanner - octopusengine.eu
 ## 2016/04 - I am beginner, but it works ;-)
@@ -192,19 +191,19 @@ def oneScan(angleStep): #=angle
          y=y+kroky
          screen.set_at((width-x,y),cBlu) 
      
-
  #screen.blit(obr, obrRect)    
+
  
- #---filter---
+ #---filter1---
  if filter1: #doplneni pri 0 predchoyi prvek
     #y=sTop+1   
     y=sTop+2   
-    while y<height-sBott:       
+    while y<height-sBott-2:       
         d = sMat[y-sTop][angleStep]
         #if d == 0:
         if (sMat[y-sTop-1][angleStep]+sMat[y-sTop+1][angleStep])>0: 
-          #d = (sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep])/3   
-          d = (sMat[y-sTop-2][angleStep]+sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep]+sMat[y-sTop+2][angleStep])/5   
+          d = (sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep])/3   
+          #d = (sMat[y-sTop-2][angleStep]+sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep]+sMat[y-sTop+2][angleStep])/5   
           sMat[y-sTop][angleStep]=d 
           x=width-axisX-d
           screen.set_at((width-x,y),cGre)
