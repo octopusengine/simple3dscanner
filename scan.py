@@ -210,17 +210,18 @@ fp.close()
 #======================================== /main scan loop =====================================
 
 #control display data
-posun=6
+shift=5
+zoom=2
 
 scanname = ramdiskPath+datName +'.txt' #RAW scann data
 scannami = ramdiskPath+datName +'.jpg'
 fw = open(scanname,"a")
 screen=pygame.display.set_mode([screen_width,screen_height])
-for u in range (loop-1):
-  for r in range (rad):
+for u in range (loop-1): #angle
+  for r in range (rad):  #row
       x=sMat[r][u]
       fw.write(str(x)+",")
-      screen.set_at((u*posun+x,r),cGre) 
+      screen.set_at((u*shift+x*zoom,r*zoom),cGre) 
   pygame.display.flip()
   fw.write("\n")
 fw.close()
