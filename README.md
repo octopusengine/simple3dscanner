@@ -32,6 +32,8 @@ schematic:<br />
 http://www.octopusengine.eu/2016gal/scanner-schematic.gif
 
 
+<img src="/octopusengine/simple3dscanner/blob/master/images/fig5-ball-schematic.jpg?raw=true" alt="fig5-ball-schematic.jpg">
+
 <hr /> 
 simple idea - how to create points cloud:
 
