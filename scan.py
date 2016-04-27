@@ -213,9 +213,9 @@ fp.close()
 shift=5
 zoom=2
 
-scanname = ramdiskPath+datName +'.txt' #RAW scann data
-scannami = ramdiskPath+datName +'.jpg'
-fw = open(scanname,"a")
+scannRaw = ramdiskPath+datName +'.txt' #RAW scann data
+scannImg = ramdiskPath+datName +'.jpg'
+fw = open(scannRaw,"a")
 screen=pygame.display.set_mode([screen_width,screen_height])
 for u in range (loop-1): #angle
   for r in range (rad):  #row
@@ -237,6 +237,7 @@ for u in range (0,360):
     screen.set_at((rx,ry),cRed) 
 
 pygame.display.flip()
+pygame.image.save(screen,scannImg)
 
 oeMotOff()
 time.sleep(10)
