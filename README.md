@@ -1,5 +1,7 @@
 # simple3dscanner
 
+<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/fig5-ball-schematic.jpg" alt="fig5-ball-schematic.jpg" width="550">
+
 It is only the first step - my first project here.<br /> 
 I would be very happy to see people "testing" or forking this and creating bigger and better versions ;-)<br /> 
 I'm also grateful for all the advice, error correction or recommendations how to better proceed...<br />
@@ -31,8 +33,6 @@ https://www.instagram.com/p/BEYQFLeR7QY/?taken-by=octopusengine
 schematic:<br /> 
 http://www.octopusengine.eu/2016gal/scanner-schematic.gif
 
-
-<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/fig5-ball-schematic.jpg" alt="fig5-ball-schematic.jpg" width="500">
 
 <hr /> 
 simple idea - how to create points cloud:
