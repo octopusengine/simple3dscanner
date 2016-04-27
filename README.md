@@ -25,9 +25,8 @@ simple starting on your Raspberry pi:<br />
 <b>What more do you need for scanner testing?</b><br /> 
 red line laser, voltage source 12V + step motor with driver<br /> 
 I am using Nema and A4988<br />  
-...point cloud to MeshLab
 
-picture of hardware:<br /> 
+picture of hardware - first alpha edition (with one laser):<br /> 
 <img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/scanner-hardware1.jpg" alt="scanner-hardware1.jpg" width="550">
 
 schematic:<br /> 
@@ -49,6 +48,11 @@ loop {
 
  example of processing<br /> 
   https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
+
+<hr />
+Import point cloud (file.xyz) to <b>MeshLab:</b><br /> 
+File / Import mesh...<br /> 
+<br /> 
 
 <hr />
 <h3>History:</h3> 
