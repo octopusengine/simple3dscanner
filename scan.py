@@ -214,8 +214,8 @@ def oneScan(angleStep): #=angle
           sVec[y-sTop] = sMat[y-sTop][angleStep]
         y=y+kroky 
   
-   y=sTop+2   
-   while y<height-sBott-2:       
+    y=sTop+2   
+    while y<height-sBott-2:       
         sMat[y-sTop][angleStep] = sVec[y-sTop]
         y=y+kroky 
   
