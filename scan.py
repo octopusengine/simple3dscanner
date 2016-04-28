@@ -66,7 +66,8 @@ nasDef = 1.6  #
 
 rad =height-sTop-sBott+1 #rows
 
-sMat = [[ 0 for i in range(loop+1)] for j in range(rad+1) ]
+sMat = [[ 0 for i in range(loop+1)] for j in range(rad+1) ] #man data matrix
+sVec = [ 0 for j in range(rad+1) ]                                                           #auxiliary vector   
 ramdiskPath = "/home/pi/ramdisk/" #temporary data storage
 
 xyzFile = ramdiskPath+datName+'.xyz'
@@ -202,16 +203,20 @@ def oneScan(angleStep): #=angle
         d = sMat[y-sTop][angleStep]
         #if d == 0:
         if (sMat[y-sTop-1][angleStep]+sMat[y-sTop+1][angleStep])>0: 
-          d = (sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep])/3   
+          #mathematical average of the surrounding pixels
+          d = (sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep])/3 
           #d = (sMat[y-sTop-2][angleStep]+sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep]+sMat[y-sTop+2][angleStep])/5   
-          sMat[y-sTop][angleStep]=d 
+          sVec[y-sTop-1] = d
+          sMat[y-sTop][angleStep]=d #todo
           x=width-axisX-d
           screen.set_at((width-x,y),cGre)
+        else:  
+          sVec[y-sTop-1] = sMat[y-sTop][angleStep]
         y=y+kroky 
   
  pygame.display.flip() 
 
- #---export xyz--- 
+ #---export xyz--- to filename.xyz 
  y=sTop+1   
  while y<height-sBott:       
     xx = sMat[y-sTop][angleStep]
@@ -225,7 +230,6 @@ def oneScan(angleStep): #=angle
       #print cop
       fp.write(co+"\n") 
     y=y+kroky
-
  #time.sleep(0.2)    
 
 #======================================== main scan loop =====================================
@@ -240,7 +244,6 @@ for st in range (loop-1):
    oeMotCCWs(1600/(loop-1),100)    #1600 na 360 #100:22.5st,16ot #
 fp.close()
 #======================================== /main scan loop =====================================
-
 #control display data
 shift=5
 zoom=2
