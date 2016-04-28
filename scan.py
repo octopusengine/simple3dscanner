@@ -4,7 +4,7 @@
 ## simple 3d scanner - octopusengine.eu
 ## 2016/04 - I am beginner, but it works ;-)
 ## 0.21 create xyz point cloud - directly posible import to MeshLab
-## 0.33 oeGPIO, oeHelp
+## 0.33 oeGPIO, oeHelp, filter1
 ##----------------------------------
 import os, sys, math, pygame, time
 from datetime import datetime
