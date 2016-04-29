@@ -16,7 +16,6 @@ and add the line<br />
 <code>tmpfs /home/pi/ramdisk tmpfs defaults,size=100M 0 0</code><br /> 
 <br />
 
-
 <br />
 simple starting on your Raspberry pi:<br />
 <code>sudo python scan.py [projectName] [numberOfScann] </code><br />
@@ -74,6 +73,4 @@ File / Import mesh...<br />
  
 <h3>Licence:</h3>
 MIT<br /> 
-<i>Copyright (c) 2016 Octopusengine.eu</i><br /> 
- 
-  
+<i>Copyright (c) 2016 Octopusengine.eu</i><hr /> 
