@@ -58,6 +58,25 @@ loop {
  example of processing<br /> 
   https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
 
+Point cloud file xyz is simple "txt" format:<br />
+<i>x1 y1 z1<br />
+x2 y2 z2<br />
+...<br />
+xn yn zn<br />
+<br />
+for exaple 5 pints:<br />
+-14.7657331345 -8.525 177<br />
+-10.7387150069 -6.2 178<br />
+-1.34233937587 -0.775 179<br />
+32.2161450208 18.6 288<br />
+41.6125206518 24.025 311<br />
+49.666556907 28.675 318 <br />
+<br />
+
+
+
+
+
 <hr />
 Import point cloud (file.xyz) to <b>MeshLab:</b><br /> 
 File / Import mesh...<br /> 
