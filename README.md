@@ -79,7 +79,7 @@ For treatment use program <a href=http://meshlab.sourceforge.net/>MeshLab</a><br
 MeshLab is an open source, portable, and extensible system for the processing and editing of unstructured 3D triangular meshes. 
 The system is aimed to help the processing of the typical not-so-small unstructured models arising in 3D scanning, providing a set of tools for editing, cleaning, healing, inspecting, rendering and converting this kind of meshes.<br /> 
 
-<b>How mport point cloud (file.xyz) to MeshLab software?</b><br />
+<b>How import point cloud (yourFile.xyz) to MeshLab software?</b><br />
 Basic step: <br />
 <code>File / Import mesh...</code><br /> 
 <br /> 
