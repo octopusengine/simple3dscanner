@@ -72,13 +72,14 @@ for exaple 5 points:<br />
 41.6125206518 24.025 311<br />
 49.666556907 28.675 318 <br />
 <br />
+</i>
 
 
 
 
 
 <hr />
-Import point cloud (file.xyz) to <b><a href=http://meshlab.sourceforge.net/>MeshLab:</a></b><br /> 
+Import point cloud (file.xyz) to <a href=http://meshlab.sourceforge.net/>MeshLab:</a><br /> 
 File / Import mesh...<br /> 
 <br /> 
 
