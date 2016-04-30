@@ -7,8 +7,10 @@ I would be very happy to see people "testing" or forking this and creating bigge
 I'm also grateful for any advice, error correction or recommendations how to proceed...<br />
 Also look at pictures in a directory <b>images</b> - it was a hard job to explain how easy principle I use ;-)<br /> 
 
-<b>What do you need for program testing?</b><br /> 
-Raspberry pi 2, Raspberrypi camera, - it works in Python 2.7 with Pygame module<br /> 
+<b>What do you need for program testing?</b><br />
+For imperfect testing you can use only free webcam, without step motor.<br /> 
+But I recommend Raspberry pi 2 and <b>Raspberrypi camera (full HD)</b><br /> 
+Program <b>scan.py</b> works in Python 2.7 with Pygame module<br /> 
 <i>setup ramdisk (temporary files):</i><br />
 <code>sudo mkdir /home/pi/ramdisk</code><br /> 
 <code>sudo nano /etc/fstab</code><br />
