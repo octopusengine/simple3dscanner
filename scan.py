@@ -14,11 +14,21 @@ from time import sleep
 from oeGPIO import * #oeSetupGPIO
 from oeHelp import *
 
-pygame.init()
+## camera selection:
+piCamera=1    #ok-beta
+webCamera=0   #alpha-testing
+mobilCamera=0 #no
+## experimental setup:
+dayLight=1    
+lightObject=1
+brownObject=0
+blueObject=0
 
-piCamera=1
-webCamera=0
-mobilCamera=0
+filter1=1  #ok-beta
+filter2=0  #no
+## ----------------------------
+
+pygame.init()
 
 width = 1600 #1024 #800
 height = 1200 #768 #600
@@ -63,16 +73,6 @@ try:
 except: 
   loop=6 	#testing 10/20/40/100/200/400...
   print ("Default rotation steps: "+ str(loop) ) 
-
-#---------------------------------
-dayLight=1
-lightObject=1
-brownObject=0
-blueObject=0
-
-filter1=1
-#---------------------------------
-
 
 if piCamera:
   sWidth =100 	# width scann
