@@ -64,7 +64,7 @@ x2 y2 z2<br />
 ...<br />
 xn yn zn<br />
 <br />
-for exaple 5 pints:<br />
+for exaple 5 points:<br />
 -14.7657331345 -8.525 177<br />
 -10.7387150069 -6.2 178<br />
 -1.34233937587 -0.775 179<br />
@@ -78,7 +78,7 @@ for exaple 5 pints:<br />
 
 
 <hr />
-Import point cloud (file.xyz) to <b>MeshLab:</b><br /> 
+Import point cloud (file.xyz) to <b><a href=http://meshlab.sourceforge.net/>MeshLab:</a></b><br /> 
 File / Import mesh...<br /> 
 <br /> 
 
