@@ -10,8 +10,9 @@ Also look at pictures in a directory <b>images</b> - it was a hard job to explai
 <b>What do you need for program testing?</b><br />
 For imperfect testing you can use only Raspberry pi 2 and free webcam, without step motor.<br />
 set only:<br />
-<code>piCamera=0<br />webCamera=1
-</code>
+<code>piCamera=0</code><br />
+<code>webCamera=1</code><br />
+
 But I recommend faster Raspberry pi 3 and <b>Raspberrypi camera (full HD)</b><br />
 <code>piCamera=1</code> is deafult setting<br />
 
