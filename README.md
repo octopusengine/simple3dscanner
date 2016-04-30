@@ -8,7 +8,7 @@ I'm also grateful for any advice, error correction or recommendations how to pro
 Also look at pictures in a directory <b>images</b> - it was a hard job to explain how easy principle I use ;-)<br /> 
 
 <b>What do you need for program testing?</b><br />
-For imperfect testing you can use only Raspberry pi 2 and free webcam, without step motor.<br />
+For imperfect testing you can use only Raspberry pi 2 and lowcost webcam, without step motor.<br />
 set only:<br />
 <code>piCamera=0</code><br />
 <code>webCamera=1</code><br />
