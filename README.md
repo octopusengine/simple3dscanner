@@ -11,7 +11,7 @@ Also look at pictures in a directory <b>images</b> - it was a hard job to explai
 For imperfect testing you can use only Raspberry pi 2 and free webcam, without step motor.<br />
 set only <code>webCamera=1</code><br />
 But I recommend faster Raspberry pi 3 and <b>Raspberrypi camera (full HD)</b><br />
-set <code>piCamera=1</code><br />
+<code>piCamera=1</code> is deafult setting<br />
 
 
 Program <b>scan.py</b> works in Python 2.7 with Pygame module<br />
