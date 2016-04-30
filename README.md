@@ -58,6 +58,10 @@ loop {
  example of processing<br /> 
   https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
 <hr />
+
+<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/fig6math.jpg" alt="fig6math.jpg" width="600">
+
+
 <b>How to convert found a red dot to xyz coordinates?</b><br />
 <a>https://www.mathsisfun.com/polar-cartesian-coordinates.html</a><br />
 When we know a point in Polar Coordinates (r, θ), and we want it in Cartesian Coordinates (x,y) we solve a right triangle with a known long side and angle<br />
