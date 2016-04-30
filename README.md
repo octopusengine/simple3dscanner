@@ -81,7 +81,7 @@ The system is aimed to help the processing of the typical not-so-small unstructu
 
 <b>How mport point cloud (file.xyz) to MeshLab software?</b><br />
 Basic step: <br />
-File / Import mesh...<br /> 
+<code>File / Import mesh...</code><br /> 
 <br /> 
 
 <hr />
