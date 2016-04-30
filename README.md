@@ -19,7 +19,7 @@ But I recommend faster Raspberry pi 3 and <b>Raspberrypi camera (full HD)</b><br
 
 Program <b>scan.py</b> works in Python 2.7 with Pygame module<br />
 <br />
-<i>How setup ramdisk (temporary files)?</i><br />
+<b>How setup ramdisk (temporary files)?</b><br />
 <code>sudo mkdir /home/pi/ramdisk</code><br /> 
 <code>sudo nano /etc/fstab</code><br />
 and add the line<br />
@@ -58,6 +58,7 @@ loop {
  example of processing<br /> 
   https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
 
+<hr />
 Point cloud file xyz is simple "txt" format:<br />
 <i>x1 y1 z1<br />
 x2 y2 z2<br />
@@ -74,12 +75,12 @@ for exaple 5 points:<br />
 <br />
 </i>
 
+For treatment use program <a href=http://meshlab.sourceforge.net/>MeshLab</a><br />
+MeshLab is an open source, portable, and extensible system for the processing and editing of unstructured 3D triangular meshes. 
+The system is aimed to help the processing of the typical not-so-small unstructured models arising in 3D scanning, providing a set of tools for editing, cleaning, healing, inspecting, rendering and converting this kind of meshes.<br /> 
 
-
-
-
-<hr />
-Import point cloud (file.xyz) to <a href=http://meshlab.sourceforge.net/>MeshLab:</a><br /> 
+<b>How mport point cloud (file.xyz) to MeshLab software?</b><br />
+Basic step: <br />
 File / Import mesh...<br /> 
 <br /> 
 
