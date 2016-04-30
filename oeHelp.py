@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # Filename : oeHelp.py
-
 #-----------------------------------
 ## simple 3d scanner - octopusengine.eu
 
@@ -13,6 +12,5 @@ def help():
   print ("First argument > project name (default: noname)" )
   print ("Second argument > number of scann (default: 6, for quick test)") 
   print ("---------------------------------------")
-
 
 #---end---
