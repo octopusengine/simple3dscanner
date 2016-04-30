@@ -57,6 +57,9 @@ loop {
 
  example of processing<br /> 
   https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
+<hr />
+How to convert found a red dot to xyz coordinates?<br />
+<a>https://www.mathsisfun.com/polar-cartesian-coordinates.html</a><br />
 
 <hr />
 Point cloud file xyz is simple "txt" format:<br />
