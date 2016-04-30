@@ -162,7 +162,7 @@ def oneScan(angleStep): #=angle
  #main loop - search between (sBott and sTop) x (startx and endX) - for every angle
  while y<height-sBott: 
    #print screen.get_at((x*10,y*10)) #1 arg
-   cR = screen.get_at((width-x,y))[0]
+   cR = screen.get_at((width-x,y))[0] #get RGB of one pixel from camera-image
    cG = screen.get_at((width-x,y))[1]
    cB = screen.get_at((width-x,y))[2]
      
