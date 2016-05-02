@@ -36,7 +36,7 @@ red line laser, voltage source 12V + step motor with driver<br />
 I am using Nema and A4988<br />  
 
 picture of hardware - first alpha edition (with one laser):<br /> 
-<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/scanner-hardware1.jpg" alt="scanner-hardware1.jpg" width="700">
+<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/scanner-hardware1.jpg" alt="scanner-hardware1.jpg" width="650">
 
 schematic:<br /> 
 http://www.octopusengine.eu/2016gal/scanner-schematic.gif
