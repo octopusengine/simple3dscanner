@@ -17,7 +17,7 @@ But I recommend faster Raspberry pi 3 and <b>Raspberrypi camera (full HD)</b><br
 <code>piCamera=1</code> is deafult setting<br />
 
 
-Program <b>scan.py</b> works in Python 2.7 with Pygame module<br />
+Program <b>scannStart.py</b> works in Python 2.7 with Pygame module<br />
 <br />
 <b>How setup ramdisk (temporary files)?</b><br />
 <code>sudo mkdir /home/pi/ramdisk</code><br /> 
@@ -28,7 +28,7 @@ and add the line<br />
 
 <br />
 simple starting on your Raspberry pi:<br />
-<code>sudo python scan.py [projectName] [numberOfScann] </code><br />
+<code>sudo python scannStart.py [projectName] [numberOfScann] </code><br />
 <i>numberOfScann = rotation steps</i><br />
 
 <b>What more do you need for scanner testing?</b><br /> 
