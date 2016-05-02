@@ -14,6 +14,7 @@ from time import sleep
 from oeGPIO import * #oeSetupGPIO
 from oeHelp import *
 
+#setup - todo
 ## camera selection:
 piCamera=1    #ok-beta
 webCamera=0   #alpha-testing
