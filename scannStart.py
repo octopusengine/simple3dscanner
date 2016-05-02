@@ -69,7 +69,7 @@ if webCamera:
   sBott=200
 
 axisX=width/2-120 #800 ##1200 
-endX=axisX-sWidth+50 #50 nejde vubec za osu  
+endX=axisX-sWidth+50 #50 only right side from axis 
 startx=width-axisX-sWidth-20 
 nasDef = 1.55  #
 
