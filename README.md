@@ -16,7 +16,6 @@ set only:<br />
 But I recommend faster Raspberry pi 3 and <b>Raspberrypi camera (full HD)</b><br />
 <code>piCamera=1</code> is deafult setting<br />
 
-
 Program <b>scannStart.py</b> works in Python 2.7 with Pygame module<br />
 <br />
 <b>How setup ramdisk (temporary files)?</b><br />
@@ -36,7 +35,7 @@ red line laser, voltage source 12V + step motor with driver<br />
 I am using Nema and A4988<br />  
 
 picture of hardware - first alpha edition (with one laser):<br /> 
-<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/scanner-hardware1.jpg" alt="scanner-hardware1.jpg" width="650">
+<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/scanner-hardware1.jpg" alt="scanner-hardware1.jpg" width="650"><br />
 
 schematic:<br /> 
 http://www.octopusengine.eu/2016gal/scanner-schematic.gif
@@ -55,12 +54,12 @@ loop {
   
   }
 
- example of processing<br /> 
-  https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
+example of processing<br /> 
+https://www.instagram.com/p/BEYRg99R7TE/?taken-by=octopusengine
 <hr />
 
 <img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/fig6math.jpg" alt="fig6math.jpg" width="700">
-
+<br />
 
 <b>How to convert found a red dot to xyz coordinates?</b><br />
 <a>https://www.mathsisfun.com/polar-cartesian-coordinates.html</a><br />
