@@ -75,7 +75,8 @@ nasDef = 1.55  #
 
 rad =height-sTop-sBott+1 #rows
 
-sMat = [[ 0 for i in range(loop+1)] for j in range(rad+1) ] #man data matrix
+sMat = [[ 0 for i in range(loop+1)] for j in range(rad+1) ] #main data matrix
+fMat = [[ 0 for i in range(loop+1)] for j in range(rad+1) ] #filter data matrix
 sVec = [ 0 for j in range(rad+1) ]                                                           #auxiliary vector   
 ramdiskPath = "/home/pi/ramdisk/" #temporary data storage
 
@@ -180,34 +181,58 @@ def oneScan(angleStep): #=angle
      
  #screen.blit(obr, obrRect)    
 
+
+ y=sTop+2   
+ while y<height-sBott-2:   #---filter0   
+    d = sMat[y-sTop][angleStep]
+    x=width-axisX-d
+    screen.set_at((width-x,y),cRed)
+    y=y+kroky 
  
  #---filter1--- 
- if filter1: #doplneni pri 0 predchoyi prvek
-    #y=sTop+1   
+ if filter13: #   
     y=sTop+2   
     while y<height-sBott-2:   #---filter1---to sVec      
-        d = sMat[y-sTop][angleStep]
-        #if d == 0:
-        #if (sMat[y-sTop-1][angleStep]+sMat[y-sTop+1][angleStep])>0: 
-        if (sMat[y-sTop-1][angleStep]>0 and sMat[y-sTop+1][angleStep])>0: 
-          #mathematical average of the surrounding pixels
-          d = (sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep])/3 
-          #d = (sMat[y-sTop-2][angleStep]+sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep]+sMat[y-sTop+2][angleStep])/5   
-          sVec[y-sTop] = d
-          #sMat[y-sTop][angleStep]=d #todo
-          x=width-axisX-d
-          screen.set_at((width-x,y),cGre)
-        else:  
-          sVec[y-sTop] = sMat[y-sTop][angleStep]
-        y=y+kroky 
-  
+        #mathematical average of the surrounding pixels
+        #d = (sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep])/3 
+        d = aver3(sMat[y-sTop-1][angleStep],sMat[y-sTop][angleStep],sMat[y-sTop+1][angleStep]) 
+        sVec[y-sTop] = d
+        ##x=width-axisX-d
+        ##screen.set_at((width-x,y),cRed)
+        y=y+kroky
+    
     y=sTop+2   
     while y<height-sBott-2:       
         sMat[y-sTop][angleStep] = sVec[y-sTop]
-        y=y+kroky 
-  
+        y=y+kroky
+
+ if filter15: #   
+    y=sTop+3   
+    while y<height-sBott-3:   #---filter1---to sVec 
+        if (sMat[y-sTop-2][angleStep] and sMat[y-sTop-1][angleStep] and sMat[y-sTop][angleStep] and sMat[y-sTop+1][angleStep] and sMat[y-sTop+2][angleStep]):    
+          d = (sMat[y-sTop-2][angleStep]+sMat[y-sTop-1][angleStep]+sMat[y-sTop][angleStep]+sMat[y-sTop+1][angleStep]+sMat[y-sTop+2][angleStep])/5 
+          sVec[y-sTop] = d
+          x=width-axisX-d
+          screen.set_at((width-x,y),cGre)
+        else:
+          sVec[y-sTop] = sMat[y-sTop][angleStep]
+
+        y=y+kroky
+    
+    y=sTop+2   
+    while y<height-sBott-2:       
+        sMat[y-sTop][angleStep] = sVec[y-sTop]
+        y=y+kroky
+    
+ 
  pygame.display.flip() 
 
+
+def oneSave(angleStep): #=angle
+ global sMat, bb, fp 
+ rr=0
+ #x=startx #camera picture X
+ y=sTop   #camera picture Y
  #---export xyz--- to filename.xyz 
  y=sTop+1   
  while y<height-sBott:       
@@ -222,11 +247,57 @@ def oneScan(angleStep): #=angle
       #print cop
       fp.write(co+"\n") 
     y=y+kroky
- #time.sleep(0.2)    
+ #time.sleep(0.2) 
+  
+def filter29(): #=angle
+ global sMat, fMat, bb, fp 
+ for angleStep in range (2,loop-2): 
+   y=sTop+1   
+   while y<height-sBott:       
+     #xxf = (sMat[y-sTop][angleStep]+sMat[y-sTop][angleStep-1]+sMat[y-sTop][angleStep+1]+sMat[y-sTop-1][angleStep]+sMat[y-sTop+1][angleStep])/5
+     af1 = aver3(sMat[y-sTop+1][angleStep],sMat[y-sTop+1][angleStep-1],sMat[y-sTop+1][angleStep+1])
+     af2 = aver3(sMat[y-sTop][angleStep],sMat[y-sTop][angleStep-1],sMat[y-sTop][angleStep+1])
+     af3 = aver3(sMat[y-sTop-1][angleStep],sMat[y-sTop-1][angleStep-1],sMat[y-sTop-1][angleStep+1])
+     xxf = aver3(af1,af2,af3)
+
+     fMat[y-sTop][angleStep]=xxf
+     y=y+1
+ 
+ for angleStep in range (2,loop-2):
+    y=sTop+1 
+    while y<height-sBott:  
+      sMat[y-sTop][angleStep]=fMat[y-sTop][angleStep]
+      y=y+1
+
+def rawImage():
+  sx =1200 #center 
+  sy =800
+  screen.set_at((sx,sy),cGre)
+  for u in range (0,360):
+    x=200
+    angle=float(u*2*pi)
+    rx=int(float(sx+math.sin(angle)*x))
+    ry=int(float(sy+math.cos(angle)*x))
+    screen.set_at((rx,ry),cRed) 
+
+
+def aver3(a1,a2,a3):
+  averOk=a2
+  if (a1>0 and a2>0 and a3>0): 
+      averOk = (a1+a2+a3)/3
+  else:
+      if (a1==0 and a2 and a3): 
+           averOk = (a2+a3)/2
+      if (a1 and a2==0 and a3): 
+           averOk = (a1+a3)/2
+      if (a1 and a2 and a3==0): 
+           averOk = (a1+a2)/2
+  return averOk
+ 
 
 #======================================== main scan loop =====================================
 scanname = ramdiskPath+datName+'.csv'
-fp = open(xyzFile,"a")
+#fp = open(xyzFile,"a")
 for st in range (loop-1):
    oneScan(st)
    print "--------------"
@@ -235,7 +306,29 @@ for st in range (loop-1):
    if piCamera:
       cam.annotate_text = co
    oeMotCCWs(1600/(loop-1),100)    #1600 na 360 #100:22.5st,16ot #
+#fp.close()
+
+if filter29:
+  print "--------------"
+  print "filter29"
+  filter29()
+  
+  print "filter29 again"
+  filter29() 
+
+
+
+
+#------------------------
+fp = open(xyzFile,"a")
+print "--------------"
+print "save xyz"
+for st in range (loop-1):
+   oneSave(st)
 fp.close()
+
+
+
 #======================================== /main scan loop =====================================
 #control display data
 shift=5
@@ -254,19 +347,12 @@ for u in range (loop-1): #angle
   fw.write("\n")
 fw.close()
 
-sx =1200 #center 
-sy =800
-screen.set_at((sx,sy),cGre)
-for u in range (0,360):
-    x=200
-    angle=float(u*2*pi)
-    rx=int(float(sx+math.sin(angle)*x))
-    ry=int(float(sy+math.cos(angle)*x))
-    screen.set_at((rx,ry),cRed) 
+rawImage()
 
 pygame.display.flip()
 pygame.image.save(screen,scannImg)
 
 oeMotOff()
-time.sleep(10)
+time.sleep(6)
+
 #---end---

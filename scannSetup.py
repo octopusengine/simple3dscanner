@@ -18,8 +18,9 @@ brownObject=0
 blueObject=0
 
 #--- filters
-filter1=1  #ok-beta
-filter2=0  #no
+filter13=1  #ok-beta
+filter15=1  #ok-beta
+filter29=1  #alpha
 ## ----------------------------
 
 

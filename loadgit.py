@@ -61,5 +61,5 @@ doNetUpdate(updaPathDw,'scannStart.py')
 doNetUpdate(updaPathDw,'oeGPIO.py')
 doNetUpdate(updaPathDw,'scannHelp.py')
 doNetUpdate(updaPathDw,'scannInit.py')
-doNetUpdate(updaPathDw,'scannConfig.py')
+doNetUpdate(updaPathDw,'scannSetup.py')
 
