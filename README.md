@@ -1,10 +1,11 @@
 # simple3dscanner
 
-<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/fig5-ball-schematic.jpg" alt="fig5-ball-schematic.jpg" width="650">
-
 It is only the first step - my first project here.<br /> 
 I would be very happy to see people "testing" or forking this and creating bigger and better versions ;-)<br /> 
 I'm also grateful for any advice, error correction or recommendations how to proceed...<br />
+
+<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/fig5-ball-schematic.jpg" alt="fig5-ball-schematic.jpg" width="650">
+
 Also look at pictures in a directory <b>images</b> - it was a hard job to explain how easy principle I use ;-)<br /> 
 
 <b>What do you need for program testing?</b><br />
