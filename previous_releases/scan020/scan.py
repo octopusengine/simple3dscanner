@@ -4,7 +4,7 @@
 #-----------------------------------
 ## simple 3d scanner 
 ## 2016/04 - I am beginner, but it works ;-)
-## 0.2 create xyz point cloud - directly posible import to MeshLab
+## 0.20 - only create xyz point cloud - directly posible import to MeshLab
 ##----------------------------------
 import os, math, pygame, time
 from datetime import datetime
@@ -131,8 +131,7 @@ def oneScan(angleStep): #=angle
  screen.set_at((11,11),cRed)
  pygame.display.flip()
 
- ##hard experiments
-
+ ##hard experiments (light set)
  if dayLight:
        fR=60 #64 #50
        fG=64
