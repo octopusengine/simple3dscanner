@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # Filename : scanSetup.py
 #-----------------------------------
 ## simple 3d scanner - octopusengine.eu
@@ -48,9 +47,5 @@ if blueObject:
 #       fR=150 #64
 #       fG=64
 #       fB=64
-
-#---------------------------------
-
-
 
 #---end---
