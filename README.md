@@ -103,12 +103,11 @@ Basic step: <br />
  
 <h3>ToDo:</h3>
 
- better user input / GUI<br /> 
- two lasers<br />
- light detection / daylight.. color of object..<br /> 
+ better user input / GUI (Pygame?)<br /> 
  faster computing / C library or Cython testing<br /> 
  second line laser (FET transistor switching?) <br /> 
  digital filter - RAW data 2D filtering<br /> 
+ light detection / daylight.. color of object..<br /> 
  converting to STL<br /> 
  
 <h3>Licence:</h3>
