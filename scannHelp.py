@@ -9,7 +9,7 @@ def help():
   print("-----------------------------------------------------")
   print("scannStart.py [projectName] [numberOfScann]") 
   print("Correct input example: scannStart.py test 100") 
-  print(">>First argument > "test" => project name" )
+  print(">>First argument > test => project name" )
   print("  (default: noname)" )
   print("  create file projectName-dateTime.xzy" )
   print(">>Second argument > 100 => number of scann") 
