@@ -100,6 +100,10 @@ Basic step: <br />
  0.20 my first "open source" post for GitHub<br /> 
  0.30 oeHelp, oeGPIO<br />
  0.33 filter1 - digital filter <i>Xn=aver(Xn-1,Xn,Xn+1)</i><br />
+ <b>2016/08</b><br />
+ testing on Raspberry Pi 3<br />
+ small bug correcting<br />
+ <hr />
  
 <h3>ToDo:</h3>
 
