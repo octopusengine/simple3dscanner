@@ -41,7 +41,7 @@ picture of hardware - first alpha edition (with one laser):<br />
 schematic:<br /> 
 http://www.octopusengine.eu/2016gal/scanner-schematic.gif<br />
 <hr/>
-22V<br/>
+220V > 12V<br/>
 <img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/220v.jpg" alt="220V.jpg" width="650"><br />
 
 
