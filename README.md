@@ -43,6 +43,11 @@ http://www.octopusengine.eu/2016gal/scanner-schematic.gif<br />
 <hr/>
 220V > 12V<br/>
 <img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/220v.jpg" alt="220V.jpg" width="650"><br />
+<br />
+Camera and laser detail:<br/>
+<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/camera.jpg" alt="camera.jpg" width="650"><br />
+<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/laser.jpg" alt="laser.jpg" width="650"><br />
+
 
 
 <hr /> 
