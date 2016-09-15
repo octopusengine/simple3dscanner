@@ -39,7 +39,9 @@ picture of hardware - first alpha edition (with one laser):<br />
 <img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/scanner-hardware1.jpg" alt="scanner-hardware1.jpg" width="650"><br />
 
 schematic:<br /> 
-http://www.octopusengine.eu/2016gal/scanner-schematic.gif
+http://www.octopusengine.eu/2016gal/scanner-schematic.gif<br />
+
+<img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/220V.jpg" alt="220V.jpg" width="650"><br />
 
 
 <hr /> 
