@@ -1,6 +1,6 @@
 # simple3dscanner
 
-It is only the first step - my first project here.<br /> 
+It is only the first step - and my first project here.<br /> 
 I would be very happy to see people "testing" or forking this and creating bigger and better versions ;-)<br /> 
 I'm also grateful for any advice, error correction or recommendations how to proceed...<br />
 
@@ -40,7 +40,8 @@ picture of hardware - first alpha edition (with one laser):<br />
 
 schematic:<br /> 
 http://www.octopusengine.eu/2016gal/scanner-schematic.gif<br />
-
+<hr/>
+22V<br/>
 <img src="https://raw.githubusercontent.com/octopusengine/simple3dscanner/master/images/220v.jpg" alt="220V.jpg" width="650"><br />
 
 
