@@ -106,7 +106,7 @@ if piCamera:
 #oeGPIO.setupGPIO()
 oeSetupGPIO()
 #---------------------------------
-
+# one image:
 def oneScan(angleStep): #=angle
  global sMat, bb, fw
  filename = "temp"+datName+".jpg"
@@ -316,9 +316,6 @@ if filter29:
   print "filter29 again"
   filter29() 
 
-
-
-
 #------------------------
 fp = open(xyzFile,"a")
 print "--------------"
@@ -326,9 +323,6 @@ print "save xyz"
 for st in range (loop-1):
    oneSave(st)
 fp.close()
-
-
-
 #======================================== /main scan loop =====================================
 #control display data
 shift=5
